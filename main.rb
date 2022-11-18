@@ -3,9 +3,10 @@ APP_ROOT = File.expand_path(File.dirname(__FILE__))
 
 
 
-require_relative 'tree'
-require_relative 'file_reader'
-require_relative 'tree_to_html'
+require_relative 'my_classes/tree'
+require_relative 'my_classes/file_reader'
+require_relative 'my_classes/tree_to_html'
+include TreeToHtml
 
 
 puts "========================".center(60)
@@ -41,7 +42,27 @@ unless File.exists?(file_path)
 end
 puts file_path
 file = FileReader.new(file_path)
-file.to_tree
+root_node = file.to_tree
+
+puts 'What do you want to call the new file?'
+print '> '
+output_name = gets.chomp
+
+until output_name.include?('.html')
+  puts 'Please end the file name with .html'
+  print '> '
+  output_name = gets.chomp
+end
+
+if File.exists?(File.join(APP_ROOT, output_name))
+  puts 'This file already exists. Please choose a new name.'
+  print '> '
+  output_name = gets.chomp
+end
+
+
+
+reformat_html(root_node, output_name)
 
 
 

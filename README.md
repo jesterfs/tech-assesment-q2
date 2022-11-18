@@ -1,19 +1,26 @@
-# Ruby on Replit
+# HTML to Tree to Reformatted HTML
 
-This is a template to get you started with Ruby on Replit. It's ready to go so you can just hit run and start coding!
+## Tech Assessment for OpenStax
 
-## Running the repl
+## By Stewart Jester
 
-Simply hit run! You can edit the run command from the `.replit` file.
+This Ruby CLI tool takes in an HTML file, converts it to a data tree, and outputs
+and HTML file with specific transformations. While it is currently set up to meet
+the specific demands of a specific request, the specified transformations can be
+changed in my_classes/tree_to_html.rb .
 
-## Installing packages
+If you upload an HTML file that does not meet any of the conditions in said file,
+it will still be converted to a data tree, but the outputted file will be identical
+to the inputted.
 
-To add packages to your repl, we recommend using the Replit packager interface in the left sidebar or using `bundle install` in the shell. Check out the [Bundle docs here](https://bundler.io/v2.3/#getting-started).
+## How to use the tool
 
-**Warning: Avoid using `gem install` to add packages.**
+After downloading the files, navigate into the tech-assessment-q2 folder in your
+command line.
+execute 'ruby main.rb'
 
-Beacuse Ruby repls use [Bundle](https://bundler.io/) under the hood to provide a consistent environment that tracks and installs the exact gems and versions needed, we recommend using `bundle install` instead of `gem install`, which may not work as expected.
+You will then be asked to provide the path to your input file. The input file it
+was built for is in this folder, so you can simply type 'input.html'. However, with
+a complete path, you can also use an external file.
 
-## Help
-
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+You will then be asked to name your new file, which will then appear in the main folder of this application.
